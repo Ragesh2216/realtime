@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Stackly Real Estate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="site-wrapper">
+
+    <!-- Left Dialer Menu -->
+    <aside class="left-dialer-menu" aria-label="Quick Dialer & Navigation">
+        <a href="tel:+18005550199" class="dialer-btn" aria-label="Call Us Now">
+            📞
+            <span class="tooltip">Dialer: +1 (800) 555-0199</span>
+        </a>
+        <a href="contact.html" class="dialer-btn" aria-label="Send Inquiry">
+            ✉️
+            <span class="tooltip">Send Inquiry</span>
+        </a>
+        <a href="properties.html" class="dialer-btn" aria-label="View Properties">
+            🏠
+            <span class="tooltip">Properties Listing</span>
+        </a>
+        <a href="login.html" class="dialer-btn" aria-label="Client Login">
+            🔑
+            <span class="tooltip">Client Portal</span>
+        </a>
+    </aside>
+
+    <!-- SECTION 1: STICKY HEADER -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html">
+                <img src="logo_0895.webp" alt="Stackly Real Estate Logo" class="site-logo-img">
+            </a>
+
+            <button class="mobile-nav-toggle" onclick="document.querySelector('.main-navigation').classList.toggle('is-open')" aria-label="Toggle Menu">☰</button>
+
+            <nav class="main-navigation" aria-label="Primary Menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.html">Properties</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html" class="btn-primary active">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECTION 2: PAGE HEADER BANNER -->
+    <section class="page-header-banner">
+        <div class="section-tag">
+            <div></div>
+            Join Stackly Network
+        </div>
+        <h1>Create Your Client Account</h1>
+        <p>Register to unlock off-market listing access, instant property alerts, and direct advisor consultations.</p>
+    </section>
+
+    <main class="site-main">
+
+        <!-- SECTION 3: ACCOUNT CREATION FORM BLOCK (REAL WEBP IMAGE) -->
+        <section class="section-block">
+            <div class="auth-grid">
+                <div>
+                    <div class="auth-container" style="max-width: 100%;">
+                        <h2>Start Registration</h2>
+                        <p>Select your account type and fill in your details below.</p>
+                        
+                        <div class="role-selector">
+                            <div class="role-option active" onclick="document.querySelectorAll('.role-option').forEach(el=>el.classList.remove('active')); this.classList.add('active');">
+                                🏡 Buyer
+                            </div>
+                            <div class="role-option" onclick="document.querySelectorAll('.role-option').forEach(el=>el.classList.remove('active')); this.classList.add('active');">
+                                💼 Agent
+                            </div>
+                            <div class="role-option" onclick="document.querySelectorAll('.role-option').forEach(el=>el.classList.remove('active')); this.classList.add('active');">
+                                🏢 Landlord
+                            </div>
+                        </div>
+
+                        <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Account registered successfully! Welcome to Stackly Real Estate.'); location.href='login.html';">
+                            <div class="form-group">
+                                <label for="signup-name">Full Legal Name</label>
+                                <input type="text" id="signup-name" class="form-control" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="signup-email">Email Address</label>
+                                <input type="email" id="signup-email" class="form-control" placeholder="john@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="signup-phone">Phone Number</label>
+                                <input type="tel" id="signup-phone" class="form-control" placeholder="+1 (800) 555-0199" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="signup-password">Create Password</label>
+                                <input type="password" id="signup-password" class="form-control" placeholder="At least 8 characters" required>
+                            </div>
+
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; cursor: pointer;">
+                                    <input type="checkbox" required> I agree to the <a href="#" style="color: var(--color-gold);">Terms of Service</a> & <a href="#" style="color: var(--color-gold);">Privacy Policy</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width: 100%;">Complete Registration</button>
+                        </form>
+
+                        <div style="text-align: center; margin-top: 1.5rem; border-top: 1px solid var(--color-gold); padding-top: 1rem;">
+                            <p style="font-size: 0.9rem;">Already have an account? <a href="login.html" style="color: var(--color-gold); font-weight: 700;">Sign In Here</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <img src="images/blogbg.webp" alt="Registration Benefits" class="img-fluid" style="max-height: 450px; width: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: MEMBERSHIP BENEFITS GRID -->
+        <section class="section-block">
+            <div class="section-title-wrap">
+                <div class="section-tag">
+                    <div></div>
+                    Exclusive Access
+                </div>
+                <h2>Why Create A Client Account?</h2>
+                <p>Enjoy premium benefits reserved strictly for registered network members.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>⚡ Priority Off-Market Access</h3>
+                    <p>Gain first-look access to high-end estates before they are listed publicly on standard portals.</p>
+                </div>
+                <div class="service-card">
+                    <h3>📊 Personalized Portfolio Analytics</h3>
+                    <p>Track real-time market value estimates and local neighborhood sales comps.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🤝 Dedicated Advisor Match</h3>
+                    <p>Get assigned a personal senior real estate advisor tailored to your target zip codes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: ROLE EXPECTATIONS -->
+        <section class="section-block">
+            <div class="section-title-wrap">
+                <div class="section-tag">
+                    <div></div>
+                    Tailored Portals
+                </div>
+                <h2>Account Profiles Designed For You</h2>
+                <p>Custom features suited to your exact role in the property ecosystem.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🏡 Home Buyers</h3>
+                    <p>Save favorite listings, compare mortgage rates, and book private walkthrough tours seamlessly.</p>
+                </div>
+                <div class="service-card">
+                    <h3>💼 Real Estate Agents</h3>
+                    <p>List client properties, manage open house schedules, and communicate with active buyers.</p>
+                </div>
+                <div class="service-card">
+                    <h3>🏢 Property Landlords</h3>
+                    <p>Upload rental units, screen prospective tenants, and oversee lease agreements online.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: ONBOARDING STEPS -->
+        <section class="section-block">
+            <div class="section-title-wrap">
+                <div class="section-tag">
+                    <div></div>
+                    How It Works
+                </div>
+                <h2>3 Simple Steps To Get Started</h2>
+                <p>From registration to key handover in four simple steps.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" style="text-align: center;">
+                    <div style="font-size: 2rem; color: var(--color-gold); font-weight: 800;">1</div>
+                    <h3>Create Account</h3>
+                    <p>Submit your basic contact information and select your membership profile type.</p>
+                </div>
+                <div class="service-card" style="text-align: center;">
+                    <div style="font-size: 2rem; color: var(--color-gold); font-weight: 800;">2</div>
+                    <h3>Verify Identity</h3>
+                    <p>Click the instant email confirmation link to activate your secure 256-bit client portal.</p>
+                </div>
+                <div class="service-card" style="text-align: center;">
+                    <div style="font-size: 2rem; color: var(--color-gold); font-weight: 800;">3</div>
+                    <h3>Start Browsing</h3>
+                    <p>Unlock off-market properties and schedule private tours with your assigned senior advisor.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: SECURITY GUARANTEE -->
+        <section class="section-block" style="text-align: center;">
+            <div class="section-tag">
+                <div></div>
+                Data Guarantee
+            </div>
+            <h2>Your Data Is 100% Secure</h2>
+            <p>We strictly protect your personal information and never share your data with third-party advertisers.</p>
+            <div style="margin-top: 1.5rem;">
+                <a href="contact.html" class="btn-primary">Questions? Talk To An Advisor</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SECTION 8: SITE FOOTER WITH logo_0895.webp -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="index.html">
+                    <img src="logo_0895.webp" alt="Stackly Real Estate Logo" class="footer-logo-img">
+                </a>
+                <p>Premier real estate firm delivering exceptional property buying, selling, and investment services with total integrity.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="properties.html">Property Listings</a></li>
+                    <li><a href="about.html">About Company</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html">Luxury Home Sales</a></li>
+                    <li><a href="services.html">Commercial Leasing</a></li>
+                    <li><a href="services.html">Property Management</a></li>
+                    <li><a href="services.html">Valuation Advisory</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="tel:+18005550199">📞 +1 (800) 555-0199</a></li>
+                    <li><a href="mailto:info@realestate.example">✉️ info@realestate.example</a></li>
+                    <li><a href="contact.html">📍 123 Prime Tower, Suite 500</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Real Estate Stackly Theme. All rights reserved. 8 Sections Standard.</p>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>

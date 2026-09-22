@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Luxury Villa - Stackly Real Estate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="site-wrapper">
+
+    <!-- Left Dialer Menu -->
+    <aside class="left-dialer-menu" aria-label="Quick Dialer & Navigation">
+        <a href="tel:+18005550199" class="dialer-btn" aria-label="Call Us Now">
+            📞
+            <span class="tooltip">Dialer: +1 (800) 555-0199</span>
+        </a>
+        <a href="contact.html" class="dialer-btn" aria-label="Send Inquiry">
+            ✉️
+            <span class="tooltip">Send Inquiry</span>
+        </a>
+        <a href="properties.html" class="dialer-btn" aria-label="View Properties">
+            🏠
+            <span class="tooltip">Properties Listing</span>
+        </a>
+        <a href="login.html" class="dialer-btn" aria-label="Client Login">
+            🔑
+            <span class="tooltip">Client Portal</span>
+        </a>
+    </aside>
+
+    <!-- SECTION 1: STICKY HEADER -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html">
+                <img src="logo_0895.webp" alt="Stackly Real Estate Logo" class="site-logo-img">
+            </a>
+
+            <button class="mobile-nav-toggle" onclick="document.querySelector('.main-navigation').classList.toggle('is-open')" aria-label="Toggle Menu">☰</button>
+
+            <nav class="main-navigation" aria-label="Primary Menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.html" class="active">Properties</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html" class="btn-primary">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-main">
+
+        <!-- SECTION 2: PROPERTY HERO SHOWCASE (REAL WEBP IMAGE) -->
+        <section class="section-block" style="text-align: center;">
+            <img src="images/prop_large_1.webp" alt="Modern Luxury Villa" class="img-fluid" style="max-height: 500px; width: 100%; object-fit: cover; margin-bottom: 1.5rem;">
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div style="text-align: left;">
+                    <div class="section-tag"><div></div> For Sale</div>
+                    <h1 style="margin-bottom: 0.2rem;">Modern Luxury Villa</h1>
+                    <p style="margin-bottom: 0;">📍 742 Evergreen Terrace, Beverly Hills, CA</p>
+                </div>
+                <div>
+                    <span style="font-size: 2.2rem; font-weight: 800; color: var(--color-gold);">$1,250,000</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: KEY SPECIFICATIONS GRID -->
+        <section class="section-block">
+            <div class="section-title-wrap">
+                <div class="section-tag"><div></div> Overview</div>
+                <h2>Property Specifications</h2>
+            </div>
+            
+            <div class="property-spec-grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); padding: 1.5rem;">
+                <div>🛏️ 4 Bedrooms</div>
+                <div>🛁 3 Bathrooms</div>
+                <div>🏠 4 BHK Layout</div>
+                <div>📐 3,200 Sq.Ft</div>
+                <div>🚗 3-Car Garage</div>
+                <div>🏊 Heated Pool</div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PROPERTY DESCRIPTION & AMENITIES -->
+        <section class="section-block">
+            <div class="about-grid">
+                <div>
+                    <h2>Property Description</h2>
+                    <p>Experience unmatched sophistication in this architectural luxury villa. Designed with open-concept living spaces, floor-to-ceiling glass windows, custom marble countertops, and an integrated smart-home automation system.</p>
+                    <p>Outdoors features a heated infinity pool, private cabana lounge, outdoor kitchen, and landscaped gardens ideal for high-end entertaining.</p>
+                    
+                    <h3 style="margin-top: 1.5rem; color: var(--color-gold);">Key Features & Amenities</h3>
+                    <ul style="list-style: none; padding-left: 0; line-height: 2;">
+                        <li>✅ Private Heated Infinity Pool & Cabana</li>
+                        <li>✅ Smart Home Automation & Climate Control</li>
+                        <li>✅ Custom Italian Chef's Kitchen & Wine Cellar</li>
+                        <li>✅ Gated Community with 24/7 Security Patrol</li>
+                        <li>✅ 3-Car Attached Garage with EV Charging</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <!-- AGENT INQUIRY FORM BLOCK -->
+                    <div style="background-color: var(--color-black); border: 2px solid var(--color-gold); padding: 2rem; border-radius: var(--border-radius);">
+                        <h3>Schedule Private Showing</h3>
+                        <p>Interested in touring this property? Submit your contact information to connect with the lead agent.</p>
+                        
+                        <form action="contact.html" method="GET">
+                            <div class="form-group">
+                                <label for="agent-name">Your Full Name</label>
+                                <input type="text" id="agent-name" class="form-control" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="agent-email">Email Address</label>
+                                <input type="email" id="agent-email" class="form-control" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="agent-phone">Phone Number</label>
+                                <input type="tel" id="agent-phone" class="form-control" placeholder="+1 (800) 555-0199" required>
+                            </div>
+                            <button type="submit" class="btn-primary" style="width: 100%;">Request Showing</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: PROPERTY GALLERY (REAL WEBP GALLERY IMAGES) -->
+        <section class="section-block">
+            <div class="section-title-wrap">
+                <div class="section-tag"><div></div> Photo Gallery</div>
+                <h2>Interior & Exterior Gallery</h2>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+                <img src="images/gal_1.webp" alt="Gallery Photo 1" class="img-fluid" style="height: 180px; width: 100%; object-fit: cover;">
+                <img src="images/gal_2.webp" alt="Gallery Photo 2" class="img-fluid" style="height: 180px; width: 100%; object-fit: cover;">
+                <img src="images/gal_3.webp" alt="Gallery Photo 3" class="img-fluid" style="height: 180px; width: 100%; object-fit: cover;">
+                <img src="images/gal_4.webp" alt="Gallery Photo 4" class="img-fluid" style="height: 180px; width: 100%; object-fit: cover;">
+            </div>
+        </section>
+
+        <!-- SECTION 6: FLOOR PLAN & LEAD AGENT PORTRAIT (REAL WEBP IMAGES) -->
+        <section class="section-block">
+            <div class="about-grid">
+                <div>
+                    <div class="section-tag"><div></div> Floor Layout</div>
+                    <h2>Architectural Floor Plan</h2>
+                    <p>Detailed space dimensions and room layout diagram.</p>
+                    <img src="images/plane.webp" alt="Architectural Floor Plan" class="img-fluid" style="margin-top: 1rem;">
+                </div>
+                <div>
+                    <div class="section-tag"><div></div> Lead Listing Agent</div>
+                    <img src="images/agent.webp" alt="Alexander Wright" class="img-fluid" style="max-height: 250px; margin: 0 auto 1rem auto; display: block;">
+                    <h3 style="text-align: center;">Alexander Wright</h3>
+                    <p style="color: var(--color-gold); font-weight: 700; text-align: center;">Managing Principal</p>
+                    <p style="text-align: center;">With over 20 years specializing in Beverly Hills luxury estates, Alexander provides tailored advisory and confidential transaction management.</p>
+                    <a href="tel:+18005550199" class="btn-primary" style="display: block; text-align: center; margin-top: 1rem;">📞 Call Agent Directly</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: SIMILAR LUXURY LISTINGS (REAL WEBP IMAGES) -->
+        <section class="section-block">
+            <div class="section-title-wrap">
+                <div class="section-tag"><div></div> Portfolio</div>
+                <h2>Similar Luxury Listings</h2>
+            </div>
+            
+            <div class="properties-grid">
+                <article class="featured-property-card hover-lift">
+                    <img src="images/prop_2.webp" alt="Penthouse" class="card-img-top">
+                    <div class="property-info">
+                        <div class="property-price">$4,500 / mo</div>
+                        <h3>Downtown Penthouse</h3>
+                        <a href="single-property.html" class="property-view-btn">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="featured-property-card hover-lift">
+                    <img src="images/prop_3.webp" alt="Estate" class="card-img-top">
+                    <div class="property-info">
+                        <div class="property-price">$890,000</div>
+                        <h3>Suburban Family Estate</h3>
+                        <a href="single-property.html" class="property-view-btn">View Details →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SECTION 8: SITE FOOTER WITH logo_0895.webp -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="index.html">
+                    <img src="logo_0895.webp" alt="Stackly Real Estate Logo" class="footer-logo-img">
+                </a>
+                <p>Premier real estate firm delivering exceptional property buying, selling, and investment services with total integrity.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="properties.html">Property Listings</a></li>
+                    <li><a href="about.html">About Company</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html">Luxury Home Sales</a></li>
+                    <li><a href="services.html">Commercial Leasing</a></li>
+                    <li><a href="services.html">Property Management</a></li>
+                    <li><a href="services.html">Valuation Advisory</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="tel:+18005550199">📞 +1 (800) 555-0199</a></li>
+                    <li><a href="mailto:info@realestate.example">✉️ info@realestate.example</a></li>
+                    <li><a href="contact.html">📍 123 Prime Tower, Suite 500</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Real Estate Stackly Theme. All rights reserved. 8 Sections Standard.</p>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>

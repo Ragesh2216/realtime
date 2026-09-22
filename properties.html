@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Catalog - Stackly Real Estate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="site-wrapper">
+
+    <!-- Left Dialer Menu -->
+    <aside class="left-dialer-menu" aria-label="Quick Dialer & Navigation">
+        <a href="tel:+18005550199" class="dialer-btn" aria-label="Call Us Now">
+            📞
+            <span class="tooltip">Dialer: +1 (800) 555-0199</span>
+        </a>
+        <a href="contact.html" class="dialer-btn" aria-label="Send Inquiry">
+            ✉️
+            <span class="tooltip">Send Inquiry</span>
+        </a>
+        <a href="properties.html" class="dialer-btn" aria-label="View Properties">
+            🏠
+            <span class="tooltip">Properties Listing</span>
+        </a>
+        <a href="login.html" class="dialer-btn" aria-label="Client Login">
+            🔑
+            <span class="tooltip">Client Portal</span>
+        </a>
+    </aside>
+
+    <!-- SECTION 1: STICKY HEADER -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html">
+                <img src="logo_0895.webp" alt="Stackly Real Estate Logo" class="site-logo-img">
+            </a>
+
+            <button class="mobile-nav-toggle" onclick="document.querySelector('.main-navigation').classList.toggle('is-open')" aria-label="Toggle Menu">☰</button>
+
+            <nav class="main-navigation" aria-label="Primary Menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="properties.html" class="active">Properties</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html" class="btn-primary">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECTION 2: PAGE HEADER BANNER WITH REAL WEBP BANNER IMAGE -->
+    <section class="page-header-banner" style="position: relative; overflow: hidden;">
+        <img src="images/properties_hero.webp" alt="Properties Hero" class="img-fluid" style="margin: 0 auto 1.5rem auto; max-height: 350px; width: 100%; object-fit: cover;">
+        <div class="section-tag">
+            <div></div>
+            Listing Catalog
+        </div>
+        <h1>Explore Available Properties</h1>
+        <p>Discover luxury residential properties, executive apartments, and commercial real estate.</p>
+    </section>
+
+    <main class="site-main">
+
+        <!-- SECTION 3: FILTER SEARCH CONTROLS BLOCK -->
+        <section class="section-block">
+            <form class="search-bar" action="#" method="GET" style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <input type="text" class="form-control" placeholder="City or Location..." aria-label="Location Filter" style="flex: 1; min-width: 200px;">
+                <select class="form-control" aria-label="Property Type Filter" style="flex: 1; min-width: 180px;">
+                    <option value="">All Property Types</option>
+                    <option value="villa">Luxury Villa</option>
+                    <option value="apartment">Penthouse / Apartment</option>
+                    <option value="estate">Family Estate</option>
+                </select>
+                <button type="submit" class="btn-primary">Filter Listings</button>
+            </form>
+        </section>
+
+        <!-- SECTION 4: PROPERTIES CATALOG GRID (REAL WEBP IMAGES) -->
+        <section class="section-block">
+            <div class="properties-grid">
+
+                <article class="featured-property-card hover-lift">
+                    <img src="images/prop_1.webp" alt="Modern Luxury Villa" class="card-img-top">
+                    <div class="property-info">
+                        <div class="property-location">📍 Beverly Hills, CA</div>
+                        <div class="property-price">$1,250,000</div>
+                        <h3>Modern Luxury Villa</h3>
+                        <p>High ceiling architectural masterpiece with private pool and smart security system.</p>
+                        <div class="property-spec-grid">
+                            <div>🛏️ 4 Beds</div>
+                            <div>🛁 3 Baths</div>
+                            <div>🏠 4 BHK</div>
+                            <div>📐 3,200 Sq.Ft</div>
+                        </div>
+                        <a href="single-property.html" class="property-view-btn">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="featured-property-card hover-lift">
+                    <img src="images/prop_2.webp" alt="Downtown Skyline Penthouse" class="card-img-top">
+                    <div class="property-info">
+                        <div class="property-location">📍 Manhattan, NY</div>
+                        <div class="property-price">$4,500 / mo</div>
+                        <h3>Downtown Skyline Penthouse</h3>
+                        <p>Panoramic city views, private elevator key access, and concierge services included.</p>
+                        <div class="property-spec-grid">
+                            <div>🛏️ 3 Beds</div>
+                            <div>🛁 2 Baths</div>
+                            <div>🏠 3 BHK</div>
+                            <div>📐 2,100 Sq.Ft</div>
+                        </div>
+                        <a href="single-property.html" class="property-view-btn">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="featured-property-card hover-lift">
+                    <img src="images/prop_3.webp" alt="Suburban Family Estate" class="card-img-top">
+                    <div class="property-info">
+                        <div class="property-location">📍 Greenwich, CT</div>
+                        <div class="property-price">$890,000</div>
+                        <h3>Suburban Family Estate</h3>
+                        <p>Spacious backyard, 3-car garage, manicured garden, and top-rated school district location.</p>
+                        <div class="property-spec-grid">
+                            <div>🛏️ 5 Beds</div>
+                            <div>🛁 4 Baths</div>
+                            <div>🏠 5 BHK</div>
+                            <div>📐 4,000 Sq.Ft</div>
+                        </div>
+                        <a href="single-property.html" class="property-view-btn">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="featured-property-card hover-lift">
+                    <img src="images/prop_large_1.webp" alt="Oceanfront Beach Mansion" class="card-img-top">
+                    <div class="property-info">
+                        <div class="property-location">📍 Miami Beach, FL</div>
+                        <div class="property-price">$3,400,000</div>
+                        <h3>Oceanfront Beach Mansion</h3>
+                        <p>Direct ocean access, expansive sun decks, private pier, and floor-to-ceiling glass walls.</p>
+                        <div class="property-spec-grid">
+                            <div>🛏️ 6 Beds</div>
+                            <div>🛁 5 Baths</div>
+                            <div>🏠 6 BHK</div>
+                            <div>📐 5,800 Sq.Ft</div>
+                        </div>
+                        <a href="single-property.html" class="property-view-btn">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="featured-property-card hover-lift">
+                    <img src="images/prop_large_2.webp" alt="Financial District Office Space" class="card-img-top">
+                    <div class="property-info">
+                        <div class="property-location">📍 Financial District, NY</div>
+                        <div class="property-price">$7,800 / mo</div>
+                        <h3>Financial District Office Space</h3>
+                        <p>Turnkey executive commercial suite with fiber internet, boardrooms, and parking.</p>
+                        <div class="property-spec-grid">
+                            <div>🏢 Suite 400</div>
+                            <div>📐 4,500 Sq.Ft</div>
+                            <div>🅿️ 10 Spots</div>
+                            <div>💼 Commercial</div>
+                        </div>
+                        <a href="single-property.html" class="property-view-btn">View Details →</a>
+                    </div>
+                </article>
+
+                <article class="featured-property-card hover-lift">
+                    <img src="images/build3.webp" alt="Mountain View Eco Residence" class="card-img-top">
+                    <div class="property-info">
+                        <div class="property-location">📍 Aspen, CO</div>
+                        <div class="property-price">$1,650,000</div>
+                        <h3>Mountain View Eco Residence</h3>
+                        <p>Solar-powered modern architecture nestled in timberland with floor heating.</p>
+                        <div class="property-spec-grid">
+                            <div>🛏️ 4 Beds</div>
+                            <div>🛁 3 Baths</div>
+                            <div>🏠 4 BHK</div>
+                            <div>📐 3,600 Sq.Ft</div>
+                        </div>
+                        <a href="single-property.html" class="property-view-btn">View Details →</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECTION 5: CATEGORY SELECTOR (REAL WEBP IMAGES) -->
+        <section class="section-block">
+            <div class="section-title-wrap">
+                <div class="section-tag">
+                    <div></div>
+                    Sectors
+                </div>
+                <h2>Explore By Category</h2>
+                <p>Narrow down your search by architectural style and land usage.</p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card hover-lift">
+                    <img src="images/dev_1.webp" alt="Luxury Villas" class="card-img-top">
+                    <div style="padding: 1rem; text-align: center;"><h3>Villas</h3></div>
+                </div>
+                <div class="category-card hover-lift">
+                    <img src="images/dev_2.webp" alt="Apartments" class="card-img-top">
+                    <div style="padding: 1rem; text-align: center;"><h3>Apartments</h3></div>
+                </div>
+                <div class="category-card hover-lift">
+                    <img src="images/dev_3.webp" alt="Commercial" class="card-img-top">
+                    <div style="padding: 1rem; text-align: center;"><h3>Commercial</h3></div>
+                </div>
+                <div class="category-card hover-lift">
+                    <img src="images/dev_4.webp" alt="Land" class="card-img-top">
+                    <div style="padding: 1rem; text-align: center;"><h3>Land Plots</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: MORTGAGE PREVIEW -->
+        <section class="section-block">
+            <div class="about-grid">
+                <div>
+                    <h2>Estimate Your Loan Terms</h2>
+                    <p>Calculate your estimated monthly mortgage payment before scheduling a tour.</p>
+                    <a href="contact.html" class="btn-primary">Speak With Mortgage Specialist</a>
+                </div>
+                <div style="border: 2px solid var(--color-gold); padding: 2rem; border-radius: 8px; text-align: center;">
+                    <h3 style="font-size: 2.2rem; color: var(--color-gold);">$5,240 / mo</h3>
+                    <p>Est. Payment on $1.25M Home</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: PRIVATE TOUR CTA -->
+        <section class="section-block" style="text-align: center;">
+            <div class="section-tag">
+                <div></div>
+                Schedule Tour
+            </div>
+            <h2>Want To View A Property In Person?</h2>
+            <p>Our senior agents are available for private 1-on-1 walkthroughs.</p>
+            <a href="contact.html" class="btn-primary" style="margin-top: 1rem;">Book Private Tour</a>
+        </section>
+
+    </main>
+
+    <!-- SECTION 8: SITE FOOTER WITH logo_0895.webp -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="index.html">
+                    <img src="logo_0895.webp" alt="Stackly Real Estate Logo" class="footer-logo-img">
+                </a>
+                <p>Premier real estate firm delivering exceptional property buying, selling, and investment services with total integrity.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="properties.html">Property Listings</a></li>
+                    <li><a href="about.html">About Company</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html">Luxury Home Sales</a></li>
+                    <li><a href="services.html">Commercial Leasing</a></li>
+                    <li><a href="services.html">Property Management</a></li>
+                    <li><a href="services.html">Valuation Advisory</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="tel:+18005550199">📞 +1 (800) 555-0199</a></li>
+                    <li><a href="mailto:info@realestate.example">✉️ info@realestate.example</a></li>
+                    <li><a href="contact.html">📍 123 Prime Tower, Suite 500</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Real Estate Stackly Theme. All rights reserved. Real WebP Assets.</p>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
