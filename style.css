@@ -1,24 +1,36 @@
 /*
-Theme Name: Real Estate Stackly Gold Theme
+Theme Name: Real Estate Stackly Theme (White Page, Black Header & Footer)
 Theme URI: https://example.com/realestate-theme
 Author: Antigravity AI
-Description: Multi-page real estate theme strictly using 3 colors (Black #111827, White #FFFFFF, Gold #D97706), Outfit/Raleway fonts, logo_0895.webp, PNG images, sticky header, left dialer, and 320px screen width mobile responsiveness.
-Version: 5.0.0
+Description: Multi-page real estate theme strictly using Black and White colors. White background for all pages and sections, solid Black sticky header and footer, Outfit/Raleway fonts, logo_0895.webp, PNG images, left dialer, and 320px screen width mobile responsiveness.
+Version: 7.0.0
 License: GNU General Public License v2 or later
 Text Domain: realestate-theme
 */
 
 /* ==========================================================================
-   1. GOOGLE FONTS & STRICT 3-COLOR VARIABLES (NO GREEN)
+   1. GOOGLE FONTS & COLOR VARIABLES
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Raleway:wght@600;700;800;900&display=swap');
 
 :root {
-  /* STRICT 3-COLOR PALETTE ONLY (Black, White, Gold) */
-  --color-black: #111827;
-  --color-black-card: #1f2937;
+  /* COLOR PALETTE: Pure White Page Backgrounds, Solid Black Header/Footer & Accents */
+  --color-page-bg: #ffffff;
+  --color-card-bg: #ffffff;
+  --color-card-subtle: #f9fafb;
+  --color-header-bg: #000000;
+  --color-footer-bg: #000000;
+  --color-black: #000000;
+  --color-text-main: #111827;
+  --color-text-muted: #374151;
   --color-white: #ffffff;
-  --color-gold: #d97706;
+  --color-border-black: #000000;
+  --color-border-white: #ffffff;
+
+  /* Legacy fallback variable aliases mapped to White / Black */
+  --color-gold: #000000;
+  --color-green: #000000;
+  --color-black-card: #ffffff;
 
   /* FONTS */
   --font-heading: 'Raleway', system-ui, -apple-system, sans-serif;
@@ -54,10 +66,10 @@ Text Domain: realestate-theme
 
 @keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 10px rgba(217, 119, 6, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   }
   50% {
-    box-shadow: 0 0 25px rgba(217, 119, 6, 0.7);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
   }
 }
 
@@ -75,11 +87,11 @@ Text Domain: realestate-theme
 
 .hover-lift:hover {
   transform: translateY(-6px);
-  box-shadow: 0 14px 30px rgba(217, 119, 6, 0.3);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* ==========================================================================
-   3. RESET & STRICT 3-COLOR PSEUDO-CLASS ENFORCEMENT
+   3. RESET & WHITE PAGE BODY STYLING
    ========================================================================== */
 * {
   box-sizing: border-box;
@@ -90,11 +102,12 @@ Text Domain: realestate-theme
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--color-page-bg);
 }
 
 body {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-page-bg);
+  color: var(--color-text-main);
   line-height: 1.6;
   font-size: var(--font-size-p);
   overflow-x: hidden;
@@ -102,7 +115,7 @@ body {
   width: 100%;
 }
 
-/* TRANSPARENT STACKLY LOGO BACKGROUND WATERMARK */
+/* TRANSPARENT STACKLY LOGO WATERMARK ON WHITE BACKGROUND */
 body::before {
   content: "";
   position: fixed;
@@ -115,7 +128,8 @@ body::before {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  opacity: 0.04;
+  opacity: 0.03;
+  filter: invert(1);
   pointer-events: none;
   z-index: 0;
 }
@@ -125,110 +139,113 @@ body::before {
   z-index: 1;
   width: 100%;
   overflow-x: hidden;
+  background-color: var(--color-page-bg);
 }
 
 /* Typography Hierarchy */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   line-height: 1.2;
+  color: var(--color-black);
 }
 
 h1 {
   font-size: var(--font-size-h1);
   font-weight: 800;
-  color: var(--color-white);
+  color: var(--color-black);
   margin-bottom: 1rem;
 }
 
 h2 {
   font-size: var(--font-size-h2);
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-black);
   margin-bottom: 0.75rem;
 }
 
 h3 {
   font-size: var(--font-size-h3);
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-black);
   margin-bottom: 0.5rem;
 }
 
 p {
   font-size: var(--font-size-p);
-  color: var(--color-white);
-  opacity: 0.9;
+  color: var(--color-text-main);
+  opacity: 0.95;
   margin-bottom: 1rem;
 }
 
 a {
-  color: var(--color-white);
+  color: var(--color-black);
   text-decoration: none;
   transition: var(--transition-smooth);
 }
 
 a:hover, a:active {
-  color: var(--color-gold);
+  color: var(--color-black);
+  text-decoration: underline;
 }
 
 a:focus, button:focus, input:focus, textarea:focus, select:focus {
-  outline: 2px solid var(--color-gold) !important;
+  outline: 2px solid var(--color-black) !important;
   outline-offset: 2px;
 }
 
 /* Buttons */
 .btn-primary, .theme-btn {
   display: inline-block;
-  background-color: var(--color-gold);
+  background-color: var(--color-black);
   color: var(--color-white);
   padding: 0.85rem 1.8rem;
   border-radius: 8px;
   font-weight: 700;
   font-size: var(--font-size-p);
-  border: 2px solid var(--color-gold);
+  border: 2px solid var(--color-black);
   cursor: pointer;
   transition: var(--transition-smooth);
   text-align: center;
 }
 
 .btn-primary:hover, .btn-primary:active, .theme-btn:hover {
-  background-color: var(--color-black);
-  color: var(--color-white);
-  border-color: var(--color-gold);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-black);
   transform: translateY(-2px);
 }
 
 .btn-secondary {
   display: inline-block;
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-black);
   padding: 0.85rem 1.8rem;
   border-radius: 8px;
   font-weight: 700;
   font-size: var(--font-size-p);
-  border: 2px solid var(--color-white);
+  border: 2px solid var(--color-black);
   cursor: pointer;
   transition: var(--transition-smooth);
   text-align: center;
 }
 
 .btn-secondary:hover, .btn-secondary:active {
-  background-color: var(--color-gold);
+  background-color: var(--color-black);
   color: var(--color-white);
-  border-color: var(--color-gold);
+  border-color: var(--color-black);
   transform: translateY(-2px);
 }
 
 /* ==========================================================================
-   4. STICKY HEADER & LOGO_0895.WEBP
+   4. STICKY HEADER - SOLID BLACK FOR EVERY PAGE
    ========================================================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--color-black);
-  border-bottom: 2px solid var(--color-gold);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background-color: var(--color-header-bg);
+  border-bottom: 2px solid var(--color-black);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   width: 100%;
 }
 
@@ -245,12 +262,14 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   height: 52px;
   width: auto;
   display: block;
+  filter: brightness(0) invert(1);
   transition: var(--transition-smooth);
 }
 
 .site-logo-img:hover {
   opacity: 0.9;
   transform: scale(1.03);
+  filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
 }
 
 .main-navigation ul {
@@ -270,15 +289,16 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 
 .main-navigation a:hover,
 .main-navigation a.active {
-  color: var(--color-gold);
-  background-color: var(--color-black);
-  border-bottom: 2px solid var(--color-gold);
+  color: var(--color-white);
+  background-color: #1f2937;
+  border-bottom: 2px solid var(--color-white);
+  text-decoration: none;
 }
 
 .mobile-nav-toggle {
   display: none;
   background: transparent;
-  border: 2px solid var(--color-gold);
+  border: 2px solid var(--color-white);
   color: var(--color-white);
   font-size: 1.5rem;
   padding: 6px 12px;
@@ -301,8 +321,8 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   background-color: var(--color-black);
   padding: 12px;
   border-radius: 12px;
-  border: 2px solid var(--color-gold);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--color-white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .dialer-btn {
@@ -310,7 +330,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   height: 48px;
   background-color: var(--color-black);
   color: var(--color-white);
-  border: 1px solid var(--color-gold);
+  border: 1px solid var(--color-white);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -321,8 +341,8 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 }
 
 .dialer-btn:hover, .dialer-btn:active, .dialer-btn:focus {
-  background-color: var(--color-gold);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
 
 .dialer-btn .tooltip {
@@ -337,7 +357,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   opacity: 0;
   visibility: hidden;
   transition: var(--transition-smooth);
-  border: 1px solid var(--color-gold);
+  border: 1px solid var(--color-white);
   pointer-events: none;
 }
 
@@ -347,11 +367,11 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 }
 
 /* ==========================================================================
-   6. SECTION BLOCKS & PNG IMAGES
+   6. WHITE PAGE SECTIONS & CARDS
    ========================================================================== */
 .page-header-banner {
-  background-color: var(--color-black);
-  border-bottom: 2px solid var(--color-gold);
+  background-color: var(--color-page-bg);
+  border-bottom: 2px solid var(--color-black);
   padding: 3rem 1.5rem;
   text-align: center;
 }
@@ -360,15 +380,16 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   max-width: 1280px;
   margin: 0 auto;
   padding: var(--section-gap) 1.5rem;
+  background-color: var(--color-page-bg);
 }
 
 .section-block {
-  background-color: var(--color-black);
+  background-color: var(--color-card-bg);
   padding: 3.5rem 2.5rem;
   border-radius: var(--border-radius);
   margin-bottom: var(--section-gap);
-  border: 2px solid var(--color-gold);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border: 2px solid var(--color-border-black);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
 }
@@ -378,7 +399,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   align-items: center;
   gap: 8px;
   background-color: var(--color-black);
-  color: var(--color-gold);
+  color: var(--color-white);
   padding: 6px 16px;
   border-radius: 20px;
   font-size: var(--font-size-small);
@@ -386,13 +407,13 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 14px;
-  border: 1px solid var(--color-gold);
+  border: 1px solid var(--color-black);
 }
 
 .section-tag div {
   width: 8px;
   height: 8px;
-  background-color: var(--color-gold);
+  background-color: var(--color-white);
   border-radius: 50%;
 }
 
@@ -406,7 +427,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  border: 2px solid var(--color-gold);
+  border: 2px solid var(--color-black);
   display: block;
 }
 
@@ -414,7 +435,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   width: 100%;
   height: 230px;
   object-fit: cover;
-  border-bottom: 2px solid var(--color-gold);
+  border-bottom: 2px solid var(--color-black);
 }
 
 /* GRIDS */
@@ -425,8 +446,8 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 }
 
 .featured-property-card, .property-card, .category-card, .news-card {
-  background-color: var(--color-black);
-  border: 2px solid var(--color-gold);
+  background-color: var(--color-card-bg);
+  border: 2px solid var(--color-black);
   border-radius: var(--border-radius);
   overflow: hidden;
   transition: var(--transition-smooth);
@@ -436,7 +457,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 
 .featured-property-card:hover, .property-card:hover, .category-card:hover, .news-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(217, 119, 6, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .property-info {
@@ -450,8 +471,8 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-gold);
-  font-weight: 600;
+  color: var(--color-black);
+  font-weight: 700;
   font-size: var(--font-size-small);
   margin-bottom: 10px;
 }
@@ -460,19 +481,20 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
-  background-color: var(--color-black-card);
+  background-color: var(--color-card-subtle);
   padding: 10px;
   border-radius: 6px;
   margin-bottom: 1rem;
-  border: 1px solid var(--color-gold);
+  border: 1px solid var(--color-black);
   text-align: center;
   font-size: var(--font-size-small);
+  color: var(--color-black);
 }
 
 .property-price {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--color-gold);
+  color: var(--color-black);
   margin-bottom: 0.5rem;
 }
 
@@ -482,17 +504,20 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   justify-content: center;
   gap: 8px;
   width: 100%;
-  background-color: var(--color-gold);
+  background-color: var(--color-black);
   color: var(--color-white);
   padding: 10px 16px;
   border-radius: 6px;
   font-weight: 700;
   margin-top: 10px;
+  border: 1px solid var(--color-black);
 }
 
 .property-view-btn:hover {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  text-decoration: none;
 }
 
 .why-choose-grid, .services-grid {
@@ -502,21 +527,21 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 }
 
 .why-choose-card, .service-card {
-  background-color: var(--color-black);
+  background-color: var(--color-card-bg);
   padding: 2rem;
   border-radius: var(--border-radius);
-  border: 2px solid var(--color-gold);
+  border: 2px solid var(--color-black);
   transition: var(--transition-smooth);
 }
 
 .why-choose-card:hover, .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(217, 119, 6, 0.25);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .why-card-icon {
   font-size: 2.2rem;
-  color: var(--color-gold);
+  color: var(--color-black);
   margin-bottom: 1rem;
 }
 
@@ -529,8 +554,8 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 }
 
 .process-item {
-  background-color: var(--color-black);
-  border: 2px solid var(--color-gold);
+  background-color: var(--color-card-bg);
+  border: 2px solid var(--color-black);
   padding: 2rem 1.25rem;
   border-radius: var(--border-radius);
   text-align: center;
@@ -543,7 +568,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 
 .process-icon {
   font-size: 2.5rem;
-  color: var(--color-gold);
+  color: var(--color-black);
   margin-bottom: 1rem;
 }
 
@@ -554,8 +579,8 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 }
 
 .team-card {
-  background-color: var(--color-black);
-  border: 2px solid var(--color-gold);
+  background-color: var(--color-card-bg);
+  border: 2px solid var(--color-black);
   border-radius: var(--border-radius);
   overflow: hidden;
   text-align: center;
@@ -564,14 +589,14 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 
 .team-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(217, 119, 6, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .team-image img {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-bottom: 2px solid var(--color-gold);
+  border-bottom: 2px solid var(--color-black);
 }
 
 .team-content {
@@ -579,8 +604,8 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 }
 
 .team-content span {
-  color: var(--color-gold);
-  font-weight: 600;
+  color: var(--color-black);
+  font-weight: 700;
   display: block;
   margin-bottom: 1rem;
 }
@@ -594,16 +619,18 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 .team-social a {
   width: 36px;
   height: 36px;
-  border: 1px solid var(--color-gold);
+  border: 1px solid var(--color-black);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--color-black);
 }
 
 .team-social a:hover {
-  background-color: var(--color-gold);
+  background-color: var(--color-black);
   color: var(--color-white);
+  text-decoration: none;
 }
 
 .about-grid, .contact-grid, .auth-grid {
@@ -616,11 +643,11 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 .auth-container {
   max-width: 500px;
   margin: 0 auto;
-  background-color: var(--color-black);
-  border: 2px solid var(--color-gold);
+  background-color: var(--color-card-bg);
+  border: 2px solid var(--color-black);
   border-radius: var(--border-radius);
   padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(217, 119, 6, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -631,23 +658,25 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  color: var(--color-black);
 }
 
 .form-control {
   width: 100%;
   padding: 12px 16px;
-  background-color: var(--color-black);
-  color: var(--color-white);
-  border: 2px solid var(--color-gold);
+  background-color: var(--color-page-bg);
+  color: var(--color-text-main);
+  border: 2px solid var(--color-black);
   border-radius: 8px;
   font-size: var(--font-size-p);
   transition: var(--transition-smooth);
 }
 
 .form-control:focus {
-  background-color: var(--color-black);
-  color: var(--color-white);
-  border-color: var(--color-gold);
+  background-color: var(--color-page-bg);
+  color: var(--color-text-main);
+  border-color: var(--color-black);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .role-selector {
@@ -660,26 +689,28 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   flex: 1;
   text-align: center;
   padding: 10px;
-  border: 2px solid var(--color-gold);
+  border: 2px solid var(--color-black);
   border-radius: 8px;
   cursor: pointer;
   font-weight: 700;
+  color: var(--color-black);
   transition: var(--transition-smooth);
 }
 
 .role-option.active, .role-option:hover {
-  background-color: var(--color-gold);
+  background-color: var(--color-black);
   color: var(--color-white);
 }
 
 /* ==========================================================================
-   7. FOOTER
+   7. FOOTER - SOLID BLACK FOR EVERY PAGE
    ========================================================================== */
 .site-footer {
-  background-color: var(--color-black);
-  border-top: 3px solid var(--color-gold);
+  background-color: var(--color-footer-bg);
+  border-top: 3px solid var(--color-black);
   padding: 4rem 2rem 2rem 2rem;
   margin-top: 3rem;
+  color: var(--color-white);
 }
 
 .footer-container {
@@ -695,14 +726,25 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   height: 60px;
   width: auto;
   margin-bottom: 1rem;
+  filter: brightness(0) invert(1);
+  transition: var(--transition-smooth);
+}
+
+.footer-logo-img:hover {
+  filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
 }
 
 .footer-col h3 {
   color: var(--color-white);
   margin-bottom: 1.2rem;
-  border-bottom: 2px solid var(--color-gold);
+  border-bottom: 2px solid var(--color-white);
   padding-bottom: 8px;
   display: inline-block;
+}
+
+.footer-col p {
+  color: var(--color-white);
+  opacity: 0.9;
 }
 
 .footer-col ul {
@@ -713,8 +755,13 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   margin-bottom: 10px;
 }
 
+.footer-col a {
+  color: var(--color-white);
+}
+
 .footer-col a:hover {
-  color: var(--color-gold);
+  color: var(--color-white);
+  text-decoration: underline;
 }
 
 .footer-bottom {
@@ -722,9 +769,14 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
   margin: 0 auto;
   text-align: center;
   padding-top: 1.8rem;
-  border-top: 1px solid var(--color-gold);
+  border-top: 1px solid var(--color-white);
   font-size: var(--font-size-small);
-  opacity: 0.8;
+  color: var(--color-white);
+  opacity: 0.85;
+}
+
+.footer-bottom p {
+  color: var(--color-white);
 }
 
 /* ==========================================================================
@@ -747,7 +799,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
     left: 0;
     right: 0;
     background-color: var(--color-black);
-    border-bottom: 2px solid var(--color-gold);
+    border-bottom: 2px solid var(--color-white);
     padding: 1.5rem;
   }
   .main-navigation.is-open ul {
